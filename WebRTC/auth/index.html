@@ -39,7 +39,7 @@
                 })
                     .then((response) => {
                         response.data.items.forEach((element) => {
-                            if (element.product.includes( 'avigator')) {
+                            if (!(element.product.includes( 'avigator'))) {
                                 const opt = `${element.displayName} - (${element.product})`
                                 document.getElementById("devices").add(new Option(opt, element.id));}
                         });
