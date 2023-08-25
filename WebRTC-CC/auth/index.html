@@ -108,7 +108,9 @@
                     },
                 })
                     .then((response) => {
-                        console.log(response.data.result);
+                        let nume = []
+                        response.data.result.Participant.forEach((elem) => nume.push(elem.displayName))
+                        console.log(nume)
                     })
                     .catch((error) => console.log(error));
             }
@@ -128,7 +130,7 @@
                 <select class="form-select" id="devices">
                     <option selected value="">Select the device...</option>
                 </select>
-                <button class="btn btn-success" type="button" onclick="JoinWebRTC2()">Start Call</button>
+                <button class="btn btn-success " type="button" onclick="JoinWebRTC2()">Start Call</button>&nbsp
                 <button class="btn btn-success" type="button" onclick="ListParticipants()">List Participants</button>
             </div>
         </div>
