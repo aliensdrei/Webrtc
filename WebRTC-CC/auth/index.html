@@ -64,10 +64,8 @@
                     .then((response) => {
                         let nume = []
                         response.data.result.Participant.forEach((elem) => 
-                        //nume.push(elem.displayName)
-                        console.log(elem)
+                        nume.push(elem.DisplayName)
                         )
-                        console.log(nume)
                         nume.forEach((elem) => {
                             let x = document.createElement("LI")
                             x.textContent = elem
