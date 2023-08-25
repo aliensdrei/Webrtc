@@ -46,6 +46,28 @@
                     .catch((error) => console.log(error));
             });
 
+            function ListParticipants(){
+                const deviceId = document.getElementById("devices").value
+
+                axios({
+                    method: "POST",
+                    headers: {
+                        Authorization:
+                            `Bearer ${token}`,
+                    },
+                    url: "https://webexapis.com/v1/xapi/command/Conference.ParticipantList.Search",
+                    data: {
+                        deviceId,
+                        "arguments": {}
+                    },
+                })
+                    .then((response) => {
+                        console.log(response.data.result);
+                    })
+                    .catch((error) => console.log(error));
+
+            }
+
             function JoinWebRTC2() {
                 const deviceId = document.getElementById("devices").value
 
@@ -107,6 +129,7 @@
                     <option selected value="">Select the device...</option>
                 </select>
                 <button class="btn btn-success" type="button" onclick="JoinWebRTC2()">Start Call</button>
+                <button class="btn btn-success" type="button" onclick="ListParticipants()">List Participants</button>
             </div>
         </div>
     </div>
