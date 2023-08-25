@@ -63,11 +63,15 @@
                 })
                     .then((response) => {
                         let nume = []
-                        response.data.result.Participant.forEach((elem) => nume.push(elem.displayName))
+                        response.data.result.Participant.forEach((elem) => 
+                        //nume.push(elem.displayName)
+                        console.log(elem)
+                        )
                         console.log(nume)
                         nume.forEach((elem) => {
                             let x = document.createElement("LI")
                             x.textContent = elem
+                            x.classList.add("list-group-item")
                             document.getElementById("listaPart").appendChild(x)
                         })
                     })
@@ -141,8 +145,8 @@
             </div>
         </div>
     </div>
-    <div>
-        <ul id = "listaPart"></ul>
+    <div class="card mt-5 w-50 mx-auto border border-primary">
+        <ol class="list-group list-group-numbered" id="listaPart"></ol>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
