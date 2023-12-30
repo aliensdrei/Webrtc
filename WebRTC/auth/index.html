@@ -42,7 +42,10 @@
                                 document.getElementById("devices").add(new Option(opt, element.id));}
                         });
                     })
-                    .catch((error) => console.log(error));
+                    .catch((error) => {
+                        console.log(error)
+                        location.replace('https://app.collab.rocks/WebRTC');
+                    });
             });
 
             function JoinWebRTC() {
