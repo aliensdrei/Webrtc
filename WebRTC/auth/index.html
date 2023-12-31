@@ -33,7 +33,7 @@
                         Authorization:
                             `Bearer ${token}`,
                     },
-                    url: "https://webexapis.com/v1/devices/",
+                    url: "https://webexapis.com/v1/devices/?type=roomdesk",
                 })
                     .then((response) => {
                         response.data.items.forEach((element) => {
