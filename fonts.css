@@ -1,0 +1,17 @@
+@font-face {
+  font-family: 'CiscoSansTT Regular';
+  src:  url('CiscoSansTTRegular.woff') format('woff')}
+@font-face {
+  font-family: 'CiscoSansTT Bold';
+  src:  url('CiscoSansTTBold.woff') format('woff')}
+  
+body { font-family: 'CiscoSansTT Regular', sans-serif !important;}
+.card-title { font-family: 'CiscoSansTT Bold', sans-serif !important; }
+select {
+  border-color: #198754 !important;}
+select:focus {
+  outline: 0 !important;
+  box-shadow: none !important;
+  border-color: #198754 !important;}
+
+  
