@@ -24,16 +24,21 @@
                         Authorization:
                             `Bearer ${token}`,
                     },
-                    url: "https://webexapis.com/v1/devices/",
+                    url: "https://webexapis.com/v1/devices/?type=roomdesk",
                 })
                     .then((response) => {
                         response.data.items.forEach((element) => {
-                            if (!(element.product.includes( 'avigator'))) {
-                                const opt = `${element.displayName} - (${element.product})`
-                                document.getElementById("devices").add(new Option(opt, element.id));}
+                            const opt = `${element.displayName} - (${element.product})`
+                            document.getElementById("devices").add(new Option(opt, element.id));
+                            if (element.connectionStatus == "disconnected"){
+                                    document.getElementById("devices").lastChild.setAttribute("disabled", "disabled");
+                                }
                         });
                     })
-                    .catch((error) => console.log(error));
+                    .catch((error) => {
+                        console.log(error)
+                        window.location.replace('https://app.collab.rocks/WebRTC-CC');
+                    });
             });
 
             function ListParticipants(){
