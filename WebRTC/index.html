@@ -6,18 +6,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WebRTC Dialer</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script><body> 
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <link rel="icon" type="image/png" href="../favicon.ico" />
+    <link type="image/x-icon" rel="shortcut icon" href="../favicon.ico" />
     <link rel="stylesheet" href="../fonts.css">
 
-    <script>
-            const randomString = Math.random().toString(36).substring(2,7);
-            var loginUrl = "https://webexapis.com/v1/authorize?client_id=C86c4dc06d8faf4ce43f9e532d240cf717d6b6304d0bab12af84dae71d344db3c&response_type=token&redirect_uri=https%3A%2F%2Fapp.collab.rocks%2FWebRTC%2Fauth&scope=spark%3Akms%20spark-admin%3Adevices_read%20spark%3Axapi_statuses%20spark-admin%3Adevices_write%20spark%3Axapi_commands&prompt=select_account%20consent&state="
+</head>
 
-            document.addEventListener("DOMContentLoaded", (event) => {
-                document.getElementById("login").href = loginUrl + randomString}
-            )
+<body>
+    <script>
+        const randomString = Math.random().toString(36).substring(2, 7);
+        var loginUrl = "https://webexapis.com/v1/authorize?client_id=C86c4dc06d8faf4ce43f9e532d240cf717d6b6304d0bab12af84dae71d344db3c&response_type=token&redirect_uri=https%3A%2F%2Fapp.collab.rocks%2FWebRTC%2Fauth&scope=spark%3Akms%20spark-admin%3Adevices_read%20spark%3Axapi_statuses%20spark-admin%3Adevices_write%20spark%3Axapi_commands&prompt=select_account%20consent&state="
+
+        document.addEventListener("DOMContentLoaded", (event) => {
+            document.getElementById("login").href = loginUrl + randomString
+        }
+        )
     </script>
 
     <div class="card mt-5 w-25 mx-auto border border-primary">
@@ -25,11 +33,10 @@
         <div class="card-body">
             <h5 class="card-title">Please login to Webex</h5>
             <p class="card-text">(You must be an administrator)</p>
-            <a id="login" href=""
-                class="btn btn-primary">Login</a>
+            <a id="login" href="" class="btn btn-primary">Login</a>
         </div>
     </div>
-   
+
 </body>
 
 </html>
