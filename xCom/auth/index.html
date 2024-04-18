@@ -17,6 +17,8 @@
         if (params.has("access_token")) {
             const token = params.get('access_token')
 
+            localStorage.setItem("token", token);
+
             document.addEventListener("DOMContentLoaded", (event) => {
                 axios({
                     method: "GET",
