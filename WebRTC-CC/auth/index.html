@@ -87,6 +87,14 @@
         function JoinWebRTC2() {
           const deviceId = document.getElementById("devices").value;
 
+          const meetingId = document.getElementById("MeetingID").value;
+          const meetingPass = document.getElementById("MeetingPass").value;
+          let strUrl = document.getElementById("invite").value
+        
+          if ((meetingId.length > 0) && (meetingId.length > 0)) {
+            strUrl = `https://teams.microsoft.com/meet/${meetingId}?p=${meetingPass}&webjoin=true&dgjPartnerID=CSCO`
+          }
+        
           axios({
             method: "POST",
             headers: {
@@ -117,7 +125,7 @@
                 BookingId: Date.now().toString,
                 Title: "Meeting",
                 Type: "MSTeams",
-                Url: document.getElementById("invite").value,
+                Url: strUrl,
               },
             },
           })
@@ -132,12 +140,10 @@
     </script>
 
     <div class="card mt-5 w-50 mx-auto border border-success">
-
       <div class="card-header bg-light">WebRTC Dialer</div>
-
       <div class="card-body">
 
-        <label for="MeetingID" class="form-label">Eneter MeetingID and Password</label>
+        <label for="MeetingID" class="form-label">Enter Teams MeetingID and Password:</label>
         <div class="input-group mb-3">
           <span class="input-group-text">Meeting ID</span>
           <input type="text" class="form-control" id="MeetingID"/>
@@ -146,8 +152,7 @@
         </div>
 
         <div class="mb-3">
-          <label for="invite" class="form-label"
-            >Or paste the MS Teams invite here:</label>
+          <label for="invite" class="form-label">OR paste the invite here:</label>
           <textarea class="form-control" id="invite" rows="5"></textarea>
         </div>
 
@@ -155,16 +160,8 @@
           <select class="form-select" id="devices">
             <option selected value="">Select the device...</option>
           </select>
-          <button class="btn btn-success" type="button" onclick="JoinWebRTC2()">
-            Start Call</button
-          >&nbsp
-          <button
-            class="btn btn-success"
-            type="button"
-            onclick="ListParticipants()"
-          >
-            List Participants
-          </button>
+          <button class="btn btn-success" type="button" onclick="JoinWebRTC2()">Start Call</button>&nbsp
+          <button class="btn btn-success" type="button" onclick="ListParticipants()">List Participants</button>
         </div>
       </div>
     </div>
