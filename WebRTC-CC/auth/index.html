@@ -87,7 +87,7 @@
         function JoinWebRTC2() {
           const deviceId = document.getElementById("devices").value;
 
-          const meetingId = document.getElementById("MeetingID").value;
+          const meetingId = document.getElementById("MeetingID").value.replaceAll(' ','');
           const meetingPass = document.getElementById("MeetingPass").value;
           let strUrl = document.getElementById("invite").value
         
