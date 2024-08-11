@@ -84,14 +84,31 @@
             });
         }
 
+        function showAlert (message) {
+          const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+          const wrapper = document.createElement('div')
+            wrapper.innerHTML = [
+              `<div class="alert alert-danger alert-dismissible d-flex align-items-center" role="alert">`,
+              `   <div>${message}</div>`,
+              '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+              '</div>'
+            ].join('')
+            alertPlaceholder.append(wrapper)
+        }
+
         function JoinWebRTC2() {
           const deviceId = document.getElementById("devices").value;
 
           const meetingId = document.getElementById("MeetingID").value.replaceAll(' ','');
           const meetingPass = document.getElementById("MeetingPass").value;
           let strUrl = document.getElementById("invite").value
-        
-          if ((meetingId.length > 0) && (meetingId.length > 0)) {
+
+          if ((meetingId.length == 0) && (meetingPass.length == 0) && (strUrl.length == 0)) {
+            showAlert("MeetingID and password OR meeting invite required !")
+            return 0
+          }
+
+          if ((meetingId.length > 0) && (meetingPass.length > 0)) {
             strUrl = `https://teams.microsoft.com/meet/${meetingId}?p=${meetingPass}&webjoin=true&dgjPartnerID=CSCO`
           }
         
@@ -140,10 +157,12 @@
     </script>
 
     <div class="card mt-5 w-50 mx-auto border border-success">
-      <div class="card-header bg-light">WebRTC Dialer</div>
-      <div class="card-body">
 
-        <label for="MeetingID" class="form-label">Enter Teams MeetingID and Password:</label>
+      <div id="liveAlertPlaceholder"></div>
+
+      <div class="card-header bg-light">MS Teams WebRTC Dialer for Webex devices</div>
+      <div class="card-body">
+        <label for="MeetingID" class="form-label">Enter MeetingID and Password:</label>
         <div class="input-group mb-3">
           <span class="input-group-text">Meeting ID</span>
           <input type="text" class="form-control" id="MeetingID"/>
