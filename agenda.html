@@ -19,33 +19,99 @@
 
   <body>
     <div class="container">
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item active"><h4>22 Octombrie</h4></li>
-        <li class="list-group-item"><h5 class="mb-0">14:00 Welcome Coffee</h5></li>
-        <li class="list-group-item"><h5 class="mb-0">15:00 Keynote</h5>
-            <ul>
-                <li><b>Didem Duru</b><p class="mb-1">Managing Director Turkyie, Romania & CIS</p></li>
-                <li><b>Ionut Gradinaru</b><p class="mb-1">Channel Leader Romania & CIS</p></li>
-                <li><b>Catalina Niculita</b><p class="mb-1">Solutions Engineer Leader, Turkiye, Romania & CIS</p></li>
-                <li><b>Kadir Ozmen</b>Kadir Ozmen<p class="mb-1">Splunk Leader Turkyie, Romania & CIS</p></li>
-                <li><b>Simona-Luiza Vulturu</b><p class="mb-1">Partner Account Executive</p></li>
-            </ul>
+      <ul class="nav nav-pills" id="myTab" role="tablist">
+        <li class="nav-item">
+          <button
+            class="nav-link active"
+            id="home-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#home-tab-pane"
+            type="button"
+          >
+            22 Oct
+          </button>
         </li>
-        <li class="list-group-item"><h5 class="mb-0">16:30 Coffee Break</h5></li>
-        <li class="list-group-item"><h5 class="mb-0">17:00 Architectures & Services Overview</h5>
-                <p class="mb-1"><b>Security:</b> Ovidiu Neghina, Account Executive</p>
-                <p class="mb-1"><b>Services:</b> Cristian Stefan, Services & Buying Programs</p>
-                <p class="mb-1"><b>Cloud & AI Infrastructure:</b> Vlad Biristeica, Account Executive</p>
-                <p class="mb-1"><b>Collaboration:</b> Razvan Atimariti, Account Executive</p>
-            </p>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            id="profile-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#profile-tab-pane"
+            type="button"
+          >
+            23 Oct
+          </button>
         </li>
-        <li class="list-group-item"><h5 class="mb-0">18:00 - 19:00 Guest Speaker: Valeriu Nicolae</h5></li>
-        <li class="list-group-item"><h5 class="mb-0">19:30 Dinner</h5></li>
-        <li class="list-group-item active"><h4>23 Octombrie</h4></li>
-        <li class="list-group-item"><h5 class="mb-0">7:30 - 10:00 Breakfast & Departure</h5></li>
-
-
       </ul>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home-tab-pane">
+          <ul class="list-group list-group-flush">
+            <!-- <li class="list-group-item text-bg-primary">
+          <h4 class="mb-0">22 Octombrie</h4>
+        </li> -->
+            <li class="list-group-item">
+              <h5 class="mb-0">14:00 Welcome Coffee</h5>
+            </li>
+            <li class="list-group-item">
+              <h5 class="mb-0">15:00 Keynote</h5>
+              <ul>
+                <li>
+                  <b>Didem Duru</b>
+                  <p class="mb-1">Managing Director Turkyie, Romania & CIS</p>
+                </li>
+                <li>
+                  <b>Ionut Gradinaru</b>
+                  <p class="mb-1">Channel Leader Romania & CIS</p>
+                </li>
+                <li>
+                  <b>Catalina Niculita</b>
+                  <p class="mb-1">
+                    Solutions Engineer Leader, Turkiye, Romania & CIS
+                  </p>
+                </li>
+                <li>
+                  <b>Kadir Ozmen</b>Kadir Ozmen
+                  <p class="mb-1">Splunk Leader Turkyie, Romania & CIS</p>
+                </li>
+                <li>
+                  <b>Simona-Luiza Vulturu</b>
+                  <p class="mb-1">Partner Account Executive</p>
+                </li>
+              </ul>
+            </li>
+            <li class="list-group-item">
+              <h5 class="mb-0">16:30 Coffee Break</h5>
+            </li>
+            <li class="list-group-item">
+              <h5 class="mb-0">17:00 Architectures & Services Overview</h5>
+              <p class="mb-1">
+                <b>Security:</b> Ovidiu Neghina, Account Executive
+              </p>
+              <p class="mb-1">
+                <b>Services:</b> Cristian Stefan, Services & Buying Programs
+              </p>
+              <p class="mb-1">
+                <b>Cloud & AI Infrastructure:</b> Vlad Biristeica, Account
+                Executive
+              </p>
+              <p class="mb-1">
+                <b>Collaboration:</b> Razvan Atimariti, Account Executive
+              </p>
+            </li>
+            <li class="list-group-item">
+              <h5 class="mb-0">18:00 - 19:00 Guest Speaker: Valeriu Nicolae</h5>
+            </li>
+            <li class="list-group-item"><h5 class="mb-0">19:30 Dinner</h5></li>
+          </ul>
+        </div>
+        <div class="tab-pane fade" id="profile-tab-pane">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <h5 class="mb-0">7:30 - 10:00 Breakfast & Departure</h5>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </body>
 </html>
